@@ -1,0 +1,57 @@
+<div class="row nav-row container-grid row-type justify-content-center" id="top">
+    <h3 class="sub-heading">Let's Eat Some Burgers!
+        <br>
+    </h3>
+</div>
+<div class="row nav-row container-grid row-type justify-content-center">
+    <h3 class="heading-3">Make a Burger</h3>
+</div>
+<div class="row nav-row container-grid row-type justify-content-center" id="burger-row">
+    <form action='/' method='POST'>
+        <input type="text" class="input-add-a-burg" id="burger" name="burger_name">
+        <button class="btn" id="add_burger" type="submit">Add-it!</button>
+    </form>
+</div>
+<div class="row container-grid row-type justify-content-center" id="header">
+    <div class="col-12 header container-grid column-type">
+        <div class="container-grid main-l side" id="burger-ready">
+            <div class="container-grid">
+                <h3 class="heading-3-black">You Can Eat This!</h3>
+            </div>
+            <h6 class="sub-text">(Click button to eat!)</h6>
+            <div class="rule sub-hr">
+                <hr>
+            </div>
+            {{#each burger}} 
+            {{#unless this.devoured}}
+            <form action='/{{this.id}}?_method=PUT' method='POST'>
+                <input type='hidden' name='devoured' value='true'>
+                <button class="eatme" type="submit">{{this.burger_name}}</button>
+            </form>
+            {{/unless}} {{/each}}
+        </div>
+        <div class="container-grid main-r side" id="burger-down">
+            <div class="container-grid">
+                <h3 class="heading-3-black">You Ate This!</h3>
+                <h6 class="sub-text">(Click button to add back to queue)</h6>
+            </div>
+            <div class="rule sub-hr">
+                <hr>
+            </div>
+            {{#each burger}} 
+            {{#if this.devoured}}
+            <form action='/{{this.id}}?_method=PUT' method='POST'>
+                <input type='hidden' name='devoured' value='false'>
+                <button class="you-ate-me" type="submit">{{this.burger_name}}</button>
+            </form>
+             {{/if}} 
+             {{/each}}
+        </div>
+    </div>
+</div>
+<div class="row nav-row container-grid row-type justify-content-center" id="footer-row">
+    <p class="paragraph footer-text">Full Stack Development by Mark Rudesyle
+        <br>Connect with me @
+        <a title="" href="http://rudesyleonline.com" target="_blank">Rudesyleonline.com</a>
+    </p>
+</div>

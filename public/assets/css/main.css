@@ -1,0 +1,269 @@
+/************************************************
+ General Default Styles
+/* ************************************************/
+body,
+div,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+form,
+p,
+button,
+input,
+select,
+textarea {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+} */
+/************************************************
+ Grid Default Styles
+************************************************/
+body {
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  max-width: none;
+  margin: 0 auto;
+  position: relative;
+  min-height: 100vh;
+}
+.row {
+  background-color: rgba(255, 255, 255, 0);
+  margin: 0 auto;
+  border: none;
+}
+
+/* Text Elements */
+
+h3 {
+  margin: 30px auto 7px;
+  padding-right: 15px;
+  padding-left: 15px;
+  color: #248f7e;
+  text-align: center;
+  font-weight: 400;
+  font-size: 24px;
+  font-family: 'Averia Sans Libre', cursive;
+}
+
+h3.sub-heading {
+  color: #fff;
+}
+
+h3.heading-3 {
+  color: #fff;
+}
+
+h3.heading-3-black {
+  color: #040404;
+}
+
+h6.sub-text {
+  text-align: center;
+  font-size: 14px;
+}
+
+p.paragraph.footer-text {
+  margin-top: 10px;
+  margin-bottom: 0;
+  color: #249072;
+  text-align: center;
+}
+
+/* Layout Elements */
+
+body.grid {
+  display: grid;
+  background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, .5) 0%, rgba(29, 30, 33, .5) 100%), url('../img/burgerBack.jpg');
+  background-image:    -moz-linear-gradient(top, rgba(255, 255, 255, .5) 0%, rgba(29, 30, 33, .5) 100%), url('../img/burgerBack.jpg');
+  background-image:      -o-linear-gradient(top, rgba(255, 255, 255, .5) 0%, rgba(29, 30, 33, .5) 100%), url('../img/burgerBack.jpg');
+  background-image:         linear-gradient(180deg, rgba(255, 255, 255, .5) 0%, rgba(29, 30, 33, .5) 100%), url('../img/burgerBack.jpg');
+  background-attachment: scroll, scroll;
+  background-position: left top, center top;
+  background-clip: border-box, border-box;
+  background-origin: padding-box, padding-box;
+  background-size: auto auto, cover;
+  background-repeat: no-repeat, no-repeat;
+
+  background-blend-mode: normal, normal;
+}
+
+.container-grid.nav-row {
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+  background-color: #fdf9f6;
+}
+
+.container-grid.header {
+  min-height: 50px;
+  background-color: #fdf9f6;
+}
+
+.container-grid.justify-content-center.nav-row.row-type {
+  background-color: rgba(4, 4, 4, .85);
+}
+
+.container-grid#burger-row {
+  padding-bottom: 16px;
+}
+
+.container-grid.column-type.header {
+  display: grid;
+  margin-bottom: 0;
+  padding-bottom: 100%;
+  background-color: rgba(255, 255, 255, .7);
+
+  grid-template-areas: 'main main' 'main-2 main-2';
+  grid-template-columns: repeat(2 , 1fr);
+  grid-template-rows: 100px 1fr;
+  grid-row-gap: 2px;
+  grid-column-gap: 2px;
+}
+
+.container-grid.side {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  border: .0625rem solid rgba(101, 93, 93, .2);
+}
+
+.container-grid.main-l.side {
+  margin-bottom: 0;
+  border-style: none;
+  background-color: transparent;
+}
+
+.container-grid.main-r.side {
+  border-style: none;
+  background-color: transparent;
+}
+
+button.eatme {
+  display: block;
+  margin-top: 4px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 2px;
+  width: 60%;
+  border-color: #000080;
+  border-radius: 5px;
+  background-color: #0072c6;
+}
+
+button.you-ate-me {
+  display: block;
+  margin-top: 4px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 2px;
+  width: 60%;
+  border-color: #040404;
+  border-radius: 5px;
+  background-color: #655d5d;
+}
+
+
+.rule.sub-hr hr {
+  border-top-color: #b3adad;
+}
+
+@media screen and (min-width: 36rem) {
+  /* Text Elements */
+
+  h3 {
+    font-size: 30px;
+  }
+
+  .container-grid.column-type.header {
+    grid-template-areas: 'main-l main-l' 'main-r main-r';
+  }
+}
+
+@media screen and (min-width: 62rem) {
+  /* Text Elements */
+
+  h3 {
+    font-size: 40px;
+  }
+
+  button.eatme {
+    width: 40%;
+  }
+
+  button.you-ate-me {
+    width: 40%;
+  }
+}
+
+@media screen and (min-width: 75rem) {
+  /* Text Elements */
+
+  h3.sub-heading {
+    color: #fff;
+  }
+
+  p.paragraph.footer-text {
+    padding-top: 0;
+  }
+
+  /* Interaction Elements */
+
+  input[type=text].input-add-a-burg {
+    margin-bottom: 0;
+    padding-bottom: 1px;
+  }
+
+  .container-grid.column-type.header {
+    margin-top: 0;
+    padding-top: 0;
+    background-color: rgba(255, 255, 255, .5);
+    background-image: none;
+    background-attachment: scroll;
+    background-position: left top;
+    background-clip: border-box;
+    background-origin: padding-box;
+    background-size: 0 0;
+    background-repeat: no-repeat;
+
+    background-blend-mode: normal;
+    grid-template-areas: '. . main-l main-l main-l main-l main-r main-r main-r main-r . .' '. . main-l main-l main-l main-l main-r main-r main-r main-r . .' '. . main-l main-l main-l main-l main-r main-r main-r main-r . .' '. . main-l main-l main-l main-l main-r main-r main-r main-r . .' '. . main-l main-l main-l main-l main-r main-r main-r main-r . .' '. . main-l main-l main-l main-l main-r main-r main-r main-r . .' '. . main-l main-l main-l main-l main-r main-r main-r main-r . .' '. . main-l main-l main-l main-l main-r main-r main-r main-r . .' '. . main-l main-l main-l main-l main-r main-r main-r main-r . .' '. . main-l main-l main-l main-l main-r main-r main-r main-r . .' '. . main-l main-l main-l main-l main-r main-r main-r main-r . .' '. . main-l main-l main-l main-l main-r main-r main-r main-r . .';
+    grid-template-columns: repeat(2 , 1fr) repeat(10 , auto);
+    grid-template-rows: 100px 1fr repeat(10 , auto);
+  }
+
+  .container-grid.justify-content-center.nav-row.row-type {
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    margin-top: 0;
+    margin-bottom: 0;
+    background-color: rgba(4, 4, 4, .85);
+    opacity: 1;
+
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+       -moz-box-orient: horizontal;
+       -moz-box-direction: normal;
+  }
+
+  .container-grid#burger-row {
+    padding-top: 0;
+    padding-bottom: 16px;
+  }
+
+  .container-grid.main-l.side {
+    padding-top: 0;
+  }
+
+  button.eatme {
+    border-radius: 5px;
+  }
+
+  .container-grid#footer-row {
+    margin-top: 0;
+    padding-top: 0;
+  }
+}
